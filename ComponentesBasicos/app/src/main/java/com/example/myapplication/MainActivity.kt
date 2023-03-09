@@ -3,34 +3,59 @@ package com.example.myapplication
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
+import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity() {
 
-    CheckBox c1,c2,c3;
+    var Radio1:RadioButton?=null
+    var Radio2:RadioButton?=null
 
+    var Check1:CheckBox?=null
+    var Check2:CheckBox?=null
+    var Check3:CheckBox?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val button:Button=findViewById(R.id.Btn)
-        button.setOnClickListener{ capturarDatos() }
+        Radio1=findViewById(R.id.radio1)
+        Radio2=findViewById(R.id.radio2)
 
-        c1= (CheckBox) findViewById(R.id.checkbox1);
-        c2 = (CheckBox) findViewById(R.id.checkbox2);
-        c3 = (CheckBox) findViewById(R.id.checkbox3);
+        Check1=findViewById(R.id.checkbox1)
+        Check2=findViewById(R.id.checkbox2)
+        Check3=findViewById(R.id.checkbox3)
+
+
+        val buttonValidar:Button=findViewById(R.id.Btn)
+        buttonValidar.setOnClickListener{ capturarDatos() }
+
     }
 
     private fun  capturarDatos(){
-        val campoTexto:EditText=findViewById(R.id.PrintName)
-        var nombre:String=campoTexto.text.toString()
-        String cad = "Seleccionado: \n";
 
-        if (c1.isChecked()==true){
-            cad+="opcion1";
+        val campoTexto:EditText=findViewById(R.id.name)
+        var nombre:String=campoTexto.text.toString()
+
+        var radio0:String="Seleccionaste: \n"
+
+        if (Radio1?.isChecked()==true){
+            radio0+="Femenino \n";
         }
-        if (c2.isChecked()==true){
-            cad+="opcion2";
+        if (Check2?.isChecked()==true){
+            radio0+="Masculino \n";
         }
-        Toast.makeText(getapplicationContext(),cad,Toast.LENGTH_LONG).show()
+
+        var check0:String="Seleccionaste: \n"
+
+        if (Check1?.isChecked()==true){
+            check0+="Cine \n";
+        }
+        if (Check2?.isChecked()==true){
+            check0+="Musica \n";
+        }
+        if (Check3?.isChecked()==true){
+            check0+="Video juegos \n";
+        }
+
+        Toast.makeText( this,"Bienvenido $nombre \n  $radio0 \n $check0",Toast.LENGTH_LONG).show()
     }
 }
