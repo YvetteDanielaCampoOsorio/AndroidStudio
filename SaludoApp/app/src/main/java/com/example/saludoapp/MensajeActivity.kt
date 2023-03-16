@@ -5,11 +5,10 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 
-class ActivityMesaje : AppCompatActivity() {
+class MensajeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_mesaje)
-
+        setContentView(R.layout.activity_mensaje)
         val campoMensaje=findViewById<TextView>(R.id.txtMesage)
 
         var miBundle: Bundle? =this.intent.extras
@@ -18,7 +17,7 @@ class ActivityMesaje : AppCompatActivity() {
             campoMensaje.text="hola ${miBundle.getString( "Nombre")} Bienvenido"
         }
 
-        val  botonSalir:Button=findViewById(R.id.btnSalir)
+        val  botonSalir: Button =findViewById(R.id.btnSalir)
         botonSalir.setOnClickListener{ onClick()}
     }
 

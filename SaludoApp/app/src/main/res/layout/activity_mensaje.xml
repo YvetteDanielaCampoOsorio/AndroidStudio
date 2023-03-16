@@ -4,21 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivityMesaje">
+    tools:context=".MensajeActivity">
 
     <TextView
+        android:id="@+id/txtMesage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txtMesage"
         android:text="mensaje"
-        />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="87dp" />
 
     <Button
+        android:id="@+id/btnSalir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btnSalir"
         android:text="Salir"
-        />
-
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="166dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

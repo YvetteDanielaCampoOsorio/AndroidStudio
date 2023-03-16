@@ -1,6 +1,7 @@
 package com.example.saludoapp
 
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -10,8 +11,8 @@ import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
-    var campoTexto:EditText?=null
-    var txtResultado:TextView?= null
+    var campoTexto: EditText?=null
+    var txtResultado: TextView?= null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,25 +21,25 @@ class MainActivity : AppCompatActivity() {
         campoTexto=findViewById(R.id.name)
         txtResultado=findViewById(R.id.txtResultado)
 
-        val Boton:Button= findViewById(R.id.BtnIngresar)
-        Boton.setOnClickListener{onClick(boton:1)}
+        val Boton: Button = findViewById(R.id.BtnIngresar)
+        Boton.setOnClickListener{onClick(1)}
 
-        val Boton2:Button= findViewById(R.id.BtnIngresar2)
-        Boton2.setOnClickListener{onClick(boton:2)}
+        val Boton2: Button = findViewById(R.id.BtnIngresar2)
+        Boton2.setOnClickListener{onClick(2)}
     }
 
-    private fun onClick() {
-        when (boton){
+    private fun onClick (){
+        (when (boton) {
             1 -> {
                 val campoTexto: EditText = findViewById(R.id.name)
                 var nombre: String = campoTexto!!.text.toString()
-                txtResultado!!.text="Bienvenido $nombre"
+                txtResultado!!.text = "Bienvenido $nombre"
                 Toast.makeText(this, "Bienvenido $nombre", Toast.LENGTH_LONG).show()
             }
-            2-> {
-                val intent = Intent( this, ActivityMesaje::class.java)
-                val miBundle:Bundle= Bundle()
-                miBundle.putString("Nombre",campoTexto!!.text.toString())
+            2 -> {
+                val intent = Intent(this, MensajeActivity::class.java)
+                val miBundle: Bundle = Bundle()
+                miBundle.putString("Nombre", campoTexto!!.text.toString())
                 intent.putExtras(miBundle)
                 startActivity(intent)
             }
