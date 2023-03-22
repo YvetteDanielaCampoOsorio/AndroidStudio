@@ -28,8 +28,8 @@ class MainActivity : AppCompatActivity() {
         Boton2.setOnClickListener{onClick(2)}
     }
 
-    private fun onClick (){
-        (when (boton) {
+    private fun onClick (boton: Int){
+        when (boton) {
             1 -> {
                 val campoTexto: EditText = findViewById(R.id.name)
                 var nombre: String = campoTexto!!.text.toString()
@@ -46,3 +46,5 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
+
+
