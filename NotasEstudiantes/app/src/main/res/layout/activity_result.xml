@@ -30,56 +30,91 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.083"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
-
-    <TextView
-        android:id="@+id/Rnombre"
-        android:layout_width="65dp"
-        android:layout_height="29dp"
-        android:layout_marginBottom="500dp"
-        android:text=""
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.083"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Rtitle"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/RMateria"
         android:layout_width="65dp"
         android:layout_height="29dp"
-        android:layout_marginBottom="456dp"
-        android:text=""
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.104"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
-
-    <TextView
-        android:id="@+id/RPromedio"
-        android:layout_width="65dp"
-        android:layout_height="29dp"
-        android:layout_marginBottom="404dp"
+        android:layout_marginBottom="556dp"
         android:text=""
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.083"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Rnombre"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Calcula tu nota"
-        android:textSize="25sp"
+        android:id="@+id/RNota1"
+        android:layout_width="65dp"
+        android:layout_height="29dp"
+        android:layout_marginBottom="504dp"
+        android:text=""
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.083"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Rnombre"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/RNota2"
+        android:layout_width="65dp"
+        android:layout_height="29dp"
+        android:text=""
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RNota1"
+        app:layout_constraintVertical_bias="0.054" />
+
+    <TextView
+        android:id="@+id/RNota3"
+        android:layout_width="65dp"
+        android:layout_height="29dp"
+        android:layout_marginBottom="320dp"
+        android:text=""
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RNota2"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <TextView
+        android:id="@+id/Promedio"
+        android:layout_width="65dp"
+        android:layout_height="29dp"
+        android:layout_marginBottom="320dp"
+        android:text=""
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RNota2"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <Button
+        android:id="@+id/Rsalir"
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
+        android:layout_height="wrap_content"
+        android:text="Finalizar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.547" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
