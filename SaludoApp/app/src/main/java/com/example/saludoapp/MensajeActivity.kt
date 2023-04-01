@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.TextView
 
 class MensajeActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mensaje)

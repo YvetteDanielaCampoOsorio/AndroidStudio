@@ -9,11 +9,13 @@ import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
-    var campoNombre: EditText?=null
-    var campoMateria: EditText?=null
-    var campoN1: EditText?=null
-    var campoN2: EditText?=null
-    var campoN3: EditText?=null
+    private var campoNombre: EditText?=null
+    private var campoMateria: EditText?=null
+    private var campoN1:EditText?=null
+    private var campoN2:EditText?=null
+    private var campoN3:EditText?=null
+    private var colorEstado : Boolean = true
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,15 +26,40 @@ class MainActivity : AppCompatActivity() {
         campoN2=findViewById(R.id.txtNota2)
         campoN3=findViewById(R.id.txtNota3)
 
-        val Boton: Button = findViewById(R.id.BtnIngresar)
-        Boton.setOnClickListener{ onClick() }
+        val Btn: Button = findViewById(R.id.BtnIngresar)
+        Btn.setOnClickListener{ onClick() }
     }
     private fun onClick () {
-        
-                val intent = Intent(this, activityResultRegistry::class.java)
-                val miBundle: Bundle = Bundle()
-                miBundle.putString("Nombre", campoTexto!!.text.toString())
-                intent.putExtras(miBundle)
-                startActivity(intent)
+        var nombre:String = campoNombre!!.text.toString()
+        var materia:String = campoMateria!!.text.toString()
+        var nota1: Double = campoN1!!.text.toString().toDouble()
+        var nota2:Double = campoN2!!.text.toString().toDouble()
+        var nota3:Double = campoN3!!.text.toString().toDouble()
+
+        var estado:String=""
+
+        var Promedio:Double=(nota1 + nota2 + nota3) / 3
+
+
+        if (Promedio >= 3.5){
+            estado += "APROBO"
+            colorEstado = true
+        }else{
+            estado += "REPROBO"
+            colorEstado = false
+        }
+
+        val intent = Intent(this, ActivityResult::class.java)
+        val miBundle: Bundle = Bundle()
+        miBundle.putString("Nombre", nombre!!)
+        miBundle.putString("Materia", materia!!)
+        miBundle.putDouble("nota1", nota1!!)
+        miBundle.putDouble("nota2", nota2!!)
+        miBundle.putDouble("nota3", nota3!!)
+        miBundle.putDouble("Promedio", Promedio!!)
+        miBundle.putString("estado", estado!!)
+
+        intent.putExtras(miBundle)
+        startActivity(intent)
             }
         }
